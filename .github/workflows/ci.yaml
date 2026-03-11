@@ -30,7 +30,7 @@ jobs:
       run: go test ./...
 
   #static code analysis
-  code quality:
+  code-quality:
     runs-on: ubuntu-latest
 
     steps:
