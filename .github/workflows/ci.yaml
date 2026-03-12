@@ -84,8 +84,10 @@ jobs:
       with:
         token: ${{ secrets.TOKEN }}
 
+    - name: Wait for DockerHub image availability
+      run: sleep 60
+
     - name: Update tag in Helm chart
-      run: sleep 120
       run: |
         sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' helm/go-web-app-chart/values.yaml
 
